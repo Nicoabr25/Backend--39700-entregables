@@ -33,7 +33,7 @@ class ProductManager {
     if (!productsFilter) {
       console.log("Producto no encontrado");
     } else {
-      return console.table(productsFilter);
+      return productsFilter;
     }
   }
 

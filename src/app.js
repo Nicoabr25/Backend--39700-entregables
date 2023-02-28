@@ -20,8 +20,7 @@ app.get("/products", async (req, res) => {
 //localhost:8080/products/2
 app.get("/products/:pid", async (req, res) => {
   const { pid } = req.params;
-  const products = await manager.getProducts();
-  const ProductId = products.find((u) => u.id === parseInt(pid));
+  const ProductId = await manager.getProductbyId(parseInt(pid));
   if (ProductId == undefined) {
     res.send("Producto inexistente");
   } else {
